@@ -5,6 +5,7 @@ Gulp Examples by @julienrenaux:
 * https://twitter.com/julienrenaux
 * https://www.facebook.com/julienrenauxblog
 
+Version: <%= version %>
 Full source at https://github.com/shprink/gulp-examples
 
 MIT License, https://github.com/shprink/gulp-examples/blob/master/LICENSE
