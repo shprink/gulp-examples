@@ -11,7 +11,7 @@ var buildFolder = './Build/'
         , minifyHtml = require("gulp-minify-html")
         , sass = require("gulp-sass")
         , less = require("gulp-less")
-        , minifyJs = require("gulp-uglify")
+        , uglify = require("gulp-uglify")
         , watch = require("gulp-watch");
 
 // Get version using NodeJs file system
@@ -83,7 +83,7 @@ gulp.task('minify-html', function () {
 // Minify JavaScript
 gulp.task('minify-js', function () {
     gulp.src('./JavaScript/*.js')
-            .pipe(minifyJs())
+            .pipe(uglify())
             .pipe(gulp.dest(buildFolder + 'minify-js'));
 });
 
@@ -119,7 +119,7 @@ gulp.task('jsLint', function () {
 
 // Lint CoffeeScript
 gulp.task('coffeeLint', function () {
-    gulp.src('./CoffeeScript/*.js')
+    gulp.src('./CoffeeScript/*.coffee')
             .pipe(coffeelint())
             .pipe(coffeelint.reporter());
 });
@@ -139,7 +139,7 @@ gulp.task('bundle-one', function () {
             .pipe(coffeelint.reporter('fail')) // make sure the task fails if not compliant
             .pipe(concat('bundleOne.js')) // concat files
             .pipe(coffee()) // compile coffee
-            .pipe(minifyJs()) // minify files
+            .pipe(uglify()) // minify files
             .pipe(header(getCopyrightVersion(), {version: getVersion()})) // Add the copyright
             .pipe(gulp.dest(buildFolder + 'bundle')); // Dump the result
 });
