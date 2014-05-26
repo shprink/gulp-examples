@@ -143,3 +143,9 @@ gulp.task('bundle-one', function () {
             .pipe(header(getCopyrightVersion(), {version: getVersion()})) // Add the copyright
             .pipe(gulp.dest(buildFolder + 'bundle')); // Dump the result
 });
+
+gulp.task('watch-coffeescript', function () {
+    watch({glob: './CoffeeScript/*.coffee'}, function (files) {
+        gulp.start('compile-coffee');
+    });
+});
