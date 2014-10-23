@@ -11,8 +11,7 @@ var buildFolder = './Build/'
         , minifyHtml = require("gulp-minify-html")
         , sass = require("gulp-sass")
         , less = require("gulp-less")
-        , uglify = require("gulp-uglify")
-        , watch = require("gulp-watch");
+        , uglify = require("gulp-uglify");
 
 // Get version using NodeJs file system
 var getVersion = function () {
@@ -145,5 +144,5 @@ gulp.task('bundle-one', function () {
 });
 
 gulp.task('watch-coffeescript', function () {
-    watch(['./CoffeeScript/*.coffee'], ['compile-coffee']);
+    gulp.watch(['./CoffeeScript/*.coffee'], ['compile-coffee']);
 });
