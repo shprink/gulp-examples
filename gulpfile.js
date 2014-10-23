@@ -145,7 +145,5 @@ gulp.task('bundle-one', function () {
 });
 
 gulp.task('watch-coffeescript', function () {
-    watch({glob: './CoffeeScript/*.coffee'}, function (files) {
-        gulp.start('compile-coffee');
-    });
+    watch(['./CoffeeScript/*.coffee'], ['compile-coffee']);
 });
