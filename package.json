@@ -24,6 +24,7 @@
   "homepage": "https://github.com/shprink/gulp-examples",
   "devDependencies": {
     "gulp": "^3.6.2",
+    "gulp-babel": "^4.0.0",
     "gulp-coffee": "^1.4.3",
     "gulp-coffeelint": "^0.3.3",
     "gulp-concat": "^2.2.0",
